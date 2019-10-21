@@ -16,9 +16,7 @@ namespace Common
             BinaryFormatter inputFormatter = new BinaryFormatter();
             MemoryStream inputStream;
             using (inputStream = new MemoryStream())
-            {
                 inputFormatter.Serialize(inputStream, objsrc);
-            }
             //将二进制流反序列化为对象  
             using (MemoryStream outputStream = new MemoryStream(inputStream.ToArray()))
             {
@@ -33,9 +31,7 @@ namespace Common
             //将对象序列化成内存中的二进制流  
             BinaryFormatter inputFormatter = new BinaryFormatter();
             using (FileStream inputStream = new FileStream(filename,FileMode.OpenOrCreate))
-            {
                 inputFormatter.Serialize(inputStream, objsrc);
-            }
             return true;
         }
 
