@@ -21,7 +21,7 @@ namespace Common
             using (MemoryStream outputStream = new MemoryStream(inputStream.ToArray()))
             {
                 BinaryFormatter outputFormatter = new BinaryFormatter();
-                obj = outputFormatter.Deserialize(outputStream);
+                obj = outputFormatter.Deserialize(outputStream);//序列化可以忽略类型
             }
             return obj;
         }
